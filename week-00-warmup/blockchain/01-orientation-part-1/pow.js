@@ -1,0 +1,21 @@
+const crypto = require("crypto");
+
+const req = "0000000";
+let ans = new Map();
+const limit = 100000000;
+
+console.log("finding...");
+for (let i = 0; i <= limit; i++) {
+    const result = crypto
+        .createHash("sha256")
+        .update(i.toString())
+        .digest("hex")
+        .toString();
+    if (result.startsWith(req)) {
+        console.log("✅ Found a value:", i);
+        ans.set(i, result);
+    }
+}
+console.log(ans);
+console.log(`these hashes are found which starts from ${req}.`);
+console.log("all keys:", ans.keys());
