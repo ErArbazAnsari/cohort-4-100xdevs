@@ -25,5 +25,5 @@ function sumOfSomething(a, b, fun) {
     return num1 + num2;
 }
 
-console.log(sumOfSomething(10, 20, square));
-console.log(sumOfSomething(10, 20, cube));
+console.log(sumOfSomething(10, 20, square)); // square is a cb
+console.log(sumOfSomething(10, 20, cube)); // cube is a cb, and sumOfSomething is HOF
